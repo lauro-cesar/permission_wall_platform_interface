@@ -7,6 +7,12 @@ const MethodChannel _channel = MethodChannel('plugins.hostcert.com.br/permission
 
 class MethodChannelPermissionWall extends PermissionWallPlatform {
   @override
+  Future<String> get platformVersion async {
+    final String version = await _channel.invokeMethod('getPlatformVersion');
+    return version;
+  }
+
+  @override
   Future<bool> canLaunch(String url) {
     return _channel.invokeMethod<bool>(
       'canLaunch',
