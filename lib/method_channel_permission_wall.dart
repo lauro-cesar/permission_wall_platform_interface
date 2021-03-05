@@ -11,12 +11,4 @@ class MethodChannelPermissionWall extends PermissionWallPlatform {
     final String version = await _channel.invokeMethod('getPlatformVersion');
     return version;
   }
-
-  @override
-  Future<bool> canLaunch(String url) {
-    return _channel.invokeMethod<bool>(
-      'canLaunch',
-      <String, Object>{'url': url},
-    ).then((value) => value ?? false);
-  }
 }

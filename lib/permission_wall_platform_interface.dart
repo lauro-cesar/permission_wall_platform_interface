@@ -16,10 +16,6 @@ abstract class PermissionWallPlatform extends PlatformInterface {
   }
 
   Future<String> get platformVersion async {
-    throw UnimplementedError('canLaunch() has not been implemented.');
-  }
-
-  Future<bool> canLaunch(String url) {
-    throw UnimplementedError('canLaunch() has not been implemented.');
+    throw UnimplementedError('platformVersion has not been implemented.');
   }
 }
